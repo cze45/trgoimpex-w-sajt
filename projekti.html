@@ -11,7 +11,7 @@ body{margin:0}
 a{color:inherit;text-decoration:none;touch-action:manipulation}
 h1,h2,h3{text-wrap:balance}
 p,li{text-wrap:pretty}
-[style*="max-width: 1240px"]{padding-left:max(24px,env(safe-area-inset-left))!important;padding-right:max(24px,env(safe-area-inset-right))!important}
+[style*="max-width: 1240px"],[style*="max-width: 1288px"]{padding-left:max(24px,env(safe-area-inset-left))!important;padding-right:max(24px,env(safe-area-inset-right))!important}
 .nav a,.fl{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}
 .hit,.dk,.tlink{position:relative}
 .hit::after,.dk::after,.tlink::after{content:"";position:absolute;inset:-12px -6px}
@@ -48,6 +48,15 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 .skip{position:absolute;left:16px;top:-80px;background:#6b0f1a;color:#fff;padding:12px 18px;border-radius:4px;font-weight:600;font-size:14px;z-index:5}
 .skip:focus{top:12px}
 @media (prefers-reduced-motion:reduce){.lnk,.card img{transition:none}.card:hover img{transform:none}}
+
+/* grid: 12 kolona, razmak 24px, kontejner 1240px, kolona 81,33px */
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px}
+.vr{position:relative}
+.vr+.vr::before{content:"";position:absolute;left:-12px;top:0;bottom:0;width:1px;background:var(--vr,#d8dde2)}
+@media (max-width:900px){.g12{grid-template-columns:minmax(0,1fr);row-gap:40px}.g12>*{grid-column:1/-1!important;grid-row:auto!important}.g12 .ph{order:-1}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g4>.vr:nth-child(odd)::before{display:none}}
+@media (max-width:600px){.g3,.g4{grid-template-columns:minmax(0,1fr)}.vr::before{display:none}}
 </style>
 </head>
 <body>
@@ -60,13 +69,13 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 
 <!-- HEADER -->
 <header style="position: sticky; top: 0; z-index: 50; background: #fefefe; border-bottom: 1px solid #d8dde2">
-<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; min-height: 84px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<div style="max-width: 1288px; margin: 0 auto; padding: 0 24px; min-height: 84px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
 <a href="index.html" aria-label="Trgoimpex W – početna strana" style="display: inline-flex; align-items: center; gap: 11px">
 <svg viewBox="0 0 198 112" width="64" height="41" fill="none" aria-hidden="true"><path d="M17 11H137L116 34H74V88L47 106V34H0L17 11Z" fill="#1B2E3C"></path><path d="M80 41H108L126 69L147 38L169 70L187 41H216L176 112H157L146 92L132 112H113L80 54Z" transform="translate(-18 -2)" fill="#6B0F1A"></path></svg>
 <span translate="no" style="font-weight: 800; font-size: 19px; line-height: 1; letter-spacing: -0.065em; white-space: nowrap">TRGOIMPEX&nbsp;W</span>
 </a>
 <nav class="nav" aria-label="Glavna navigacija" style="display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
-<div class="dd"><a class="lnk" href="index.html" style="padding: 12px 0"><span class="u">Početna</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="ddm"><div><a href="index.html#usluge">Delatnosti</a><a href="index.html#projekti">Odabrani projekti</a><a href="index.html#o-nama">O firmi</a><a href="index.html#kontakt">Kontakt</a></div></div></div>
+<div class="dd"><a class="lnk" href="index.html" style="padding: 12px 0"><span class="u">Početna</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a><div class="ddm"><div><a href="index.html#usluge">Delatnosti</a><a href="index.html#projekti">Odabrani projekti</a><a href="index.html#o-nama">O firmi</a><a href="index.html#kontakt">Kontakt</a></div></div></div>
 <a class="lnk" href="projekti.html" aria-current="page" style="padding: 12px 0; color: #6b0f1a"><span class="u">Projekti</span></a>
 <a class="lnk" href="o-nama.html" style="padding: 12px 0"><span class="u">O nama</span></a>
 <a class="lnk btn" href="kontakt.html" style="padding: 13px 20px; background: #6b0f1a; color: #fefefe; border-radius: 4px; font-weight: 600">Zatražite ponudu</a>
@@ -88,9 +97,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 <section style="padding: 24px 0 96px; background: #fefefe">
 <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px">
 
-<article class="card" style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
-<div style="flex: 1 1 560px; min-width: 0; aspect-ratio: 16/9; overflow: hidden; background: #f3f4f5"><img src="images/most-asfalt.webp" alt="Asfaltiranje kolovoza na mostu sa zaštitnim ogradama" width="1600" height="900" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block"></div>
-<div style="flex: 1 1 340px; min-width: 0">
+<article class="card g12" style="align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
+<div class="ph" style="grid-column: 1 / span 7; grid-row: 1; min-width: 0; aspect-ratio: 16/9; overflow: hidden; background: #f3f4f5"><img src="images/most-asfalt.webp" alt="Asfaltiranje kolovoza na mostu sa zaštitnim ogradama" width="1600" height="900" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block"></div>
+<div style="grid-column: 9 / span 4; grid-row: 1; min-width: 0">
 <p style="margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #6b0f1a">Infrastruktura</p>
 <h2 style="margin: 0 0 16px; font-size: 30px; line-height: 1.2; font-weight: 800; letter-spacing: -0.035em">Asfaltiranje kolovoza na mostu</h2>
 <p style="margin: 0 0 14px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Fotografija prikazuje asfaltiranje kolovoza na mostu. Nova asfaltna površina prati krivinu mosta, između ivičnjaka i pešačkih staza.</p>
@@ -99,20 +108,20 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 </div>
 </article>
 
-<article class="card" style="display: flex; flex-wrap: wrap-reverse; gap: 32px 64px; align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
-<div style="flex: 1 1 340px; min-width: 0">
+<article class="card g12" style="align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
+<div style="grid-column: 1 / span 4; grid-row: 1; min-width: 0">
 <p style="margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #6b0f1a">Visokogradnja</p>
 <h2 style="margin: 0 0 16px; font-size: 30px; line-height: 1.2; font-weight: 800; letter-spacing: -0.035em">Čelična konstrukcija hale</h2>
 <p style="margin: 0 0 14px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Na fotografiji je čelična konstrukcija hale u fazi montaže. Niz stubova i krovnih nosača formira oblik objekta, dok dijagonalna ukrućenja povezuju elemente konstrukcije.</p>
 <p style="margin: 0 0 24px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Radnici koriste podiznu platformu za pristup elementima na visini. Kadar prikazuje konstrukciju pre zatvaranja fasade i krova, sa vidljivim nosačima i spojevima.</p>
 <a class="lnk hit" href="kontakt.html" style="font-size: 14px; font-weight: 600; color: #6b0f1a; border-bottom: 2px solid #6b0f1a; padding-bottom: 2px">Pošaljite upit za sličan rad</a>
 </div>
-<div style="flex: 1 1 560px; min-width: 0; aspect-ratio: 4/3; overflow: hidden; background: #f3f4f5"><img src="images/hala-konstrukcija.webp" alt="Radnici montiraju čeličnu konstrukciju hale" width="1600" height="1200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div class="ph" style="grid-column: 6 / span 7; grid-row: 1; min-width: 0; aspect-ratio: 4/3; overflow: hidden; background: #f3f4f5"><img src="images/hala-konstrukcija.webp" alt="Radnici montiraju čeličnu konstrukciju hale" width="1600" height="1200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 </article>
 
-<article class="card" style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
-<div style="flex: 1 1 560px; min-width: 0; aspect-ratio: 4/3; overflow: hidden; background: #f3f4f5"><img src="images/plato-asfalt.webp" alt="Asfaltirani industrijski plato između hala sa obeleženim parking mestima" width="1600" height="1200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
-<div style="flex: 1 1 340px; min-width: 0">
+<article class="card g12" style="align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
+<div class="ph" style="grid-column: 1 / span 7; grid-row: 1; min-width: 0; aspect-ratio: 4/3; overflow: hidden; background: #f3f4f5"><img src="images/plato-asfalt.webp" alt="Asfaltirani industrijski plato između hala sa obeleženim parking mestima" width="1600" height="1200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="grid-column: 9 / span 4; grid-row: 1; min-width: 0">
 <p style="margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #6b0f1a">Niskogradnja</p>
 <h2 style="margin: 0 0 16px; font-size: 30px; line-height: 1.2; font-weight: 800; letter-spacing: -0.035em">Asfaltiranje industrijskog platoa</h2>
 <p style="margin: 0 0 14px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Fotografija prikazuje asfaltirani plato između dva reda industrijskih hala. Središnji prolaz omogućava prilaz objektima, a uz njega su obeležena parking mesta.</p>
@@ -121,15 +130,15 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 </div>
 </article>
 
-<article class="card" style="display: flex; flex-wrap: wrap-reverse; gap: 32px 64px; align-items: center; padding: 64px 0 0">
-<div style="flex: 1 1 340px; min-width: 0">
+<article class="card g12" style="align-items: center; padding: 64px 0 0">
+<div style="grid-column: 1 / span 5; grid-row: 1; min-width: 0">
 <p style="margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #6b0f1a">Ograđivanje</p>
 <h2 style="margin: 0 0 16px; font-size: 30px; line-height: 1.2; font-weight: 800; letter-spacing: -0.035em">Žičana ograda</h2>
 <p style="margin: 0 0 14px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Ogradu čine žičana mreža i betonski stubovi. Na fotografiji se vide kosi oslonci koji dodatno podupiru stub i zategnuta mreža između susednih stubova.</p>
 <p style="margin: 0 0 24px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Iznad mreže nalaze se redovi bodljikave žice. Ograda prati ivicu poljoprivredne površine i razdvaja je od pristupnog pojasa sa spoljne strane.</p>
 <a class="lnk hit" href="kontakt.html" style="font-size: 14px; font-weight: 600; color: #6b0f1a; border-bottom: 2px solid #6b0f1a; padding-bottom: 2px">Pošaljite upit za sličan rad</a>
 </div>
-<div style="flex: 1 1 560px; min-width: 0; max-width: 560px; aspect-ratio: 4/5; overflow: hidden; background: #f3f4f5"><img src="images/zicana-ograda.webp" alt="Žičana ograda na betonskim stubovima sa kosnicima i bodljikavom žicom" width="1200" height="1600" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block"></div>
+<div class="ph" style="grid-column: 7 / span 6; grid-row: 1; min-width: 0; aspect-ratio: 4/5; overflow: hidden; background: #f3f4f5"><img src="images/zicana-ograda.webp" alt="Žičana ograda na betonskim stubovima sa kosnicima i bodljikavom žicom" width="1200" height="1600" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block"></div>
 </article>
 
 </div>
@@ -144,7 +153,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 <div><div style="font-size: 36px; font-weight: 800; letter-spacing: -0.04em">Planirate radove?</div></div>
 <a class="lnk btn" href="kontakt.html" style="display: inline-flex; align-items: center; gap: 16px; min-height: 54px; padding: 15px 24px; box-sizing: border-box; border: 1px solid rgba(254,254,254,0.35); border-radius: 4px; background: #6b0f1a; color: #fefefe; font-size: 15px; font-weight: 600">Zatražite ponudu <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 48px; padding-bottom: 56px">
+<div class="g4" style="row-gap: 48px; padding-bottom: 56px">
 <div>
 <div style="display: inline-flex; align-items: center; gap: 11px; margin-bottom: 20px">
 <svg viewBox="0 0 198 112" width="64" height="41" fill="none" aria-hidden="true"><path d="M17 11H137L116 34H74V88L47 106V34H0L17 11Z" fill="#FEFEFE"></path><path d="M80 41H108L126 69L147 38L169 70L187 41H216L176 112H157L146 92L132 112H113L80 54Z" transform="translate(-18 -2)" fill="#FEFEFE"></path></svg>

@@ -11,7 +11,7 @@ body{margin:0}
 a{color:inherit;text-decoration:none;touch-action:manipulation}
 h1,h2,h3{text-wrap:balance}
 p,li{text-wrap:pretty}
-[style*="max-width: 1240px"]{padding-left:max(24px,env(safe-area-inset-left))!important;padding-right:max(24px,env(safe-area-inset-right))!important}
+[style*="max-width: 1240px"],[style*="max-width: 1288px"]{padding-left:max(24px,env(safe-area-inset-left))!important;padding-right:max(24px,env(safe-area-inset-right))!important}
 .nav a,.fl{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}
 .hit,.dk,.tlink{position:relative}
 .hit::after,.dk::after,.tlink::after{content:"";position:absolute;inset:-12px -6px}
@@ -46,6 +46,15 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 .skip{position:absolute;left:16px;top:-80px;background:#6b0f1a;color:#fff;padding:12px 18px;border-radius:4px;font-weight:600;font-size:14px;z-index:5}
 .skip:focus{top:12px}
 @media (prefers-reduced-motion:reduce){.lnk{transition:none}}
+
+/* grid: 12 kolona, razmak 24px, kontejner 1240px, kolona 81,33px */
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px}
+.vr{position:relative}
+.vr+.vr::before{content:"";position:absolute;left:-12px;top:0;bottom:0;width:1px;background:var(--vr,#d8dde2)}
+@media (max-width:900px){.g12{grid-template-columns:minmax(0,1fr);row-gap:40px}.g12>*{grid-column:1/-1!important;grid-row:auto!important}.g12 .ph{order:-1}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g4>.vr:nth-child(odd)::before{display:none}}
+@media (max-width:600px){.g3,.g4{grid-template-columns:minmax(0,1fr)}.vr::before{display:none}}
 </style>
 </head>
 <body>
@@ -58,13 +67,13 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 
 <!-- HEADER -->
 <header style="position: sticky; top: 0; z-index: 50; background: #fefefe; border-bottom: 1px solid #d8dde2">
-<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; min-height: 84px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<div style="max-width: 1288px; margin: 0 auto; padding: 0 24px; min-height: 84px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
 <a href="index.html" aria-label="Trgoimpex W – početna strana" style="display: inline-flex; align-items: center; gap: 11px">
 <svg viewBox="0 0 198 112" width="64" height="41" fill="none" aria-hidden="true"><path d="M17 11H137L116 34H74V88L47 106V34H0L17 11Z" fill="#1B2E3C"></path><path d="M80 41H108L126 69L147 38L169 70L187 41H216L176 112H157L146 92L132 112H113L80 54Z" transform="translate(-18 -2)" fill="#6B0F1A"></path></svg>
 <span translate="no" style="font-weight: 800; font-size: 19px; line-height: 1; letter-spacing: -0.065em; white-space: nowrap">TRGOIMPEX&nbsp;W</span>
 </a>
 <nav class="nav" aria-label="Glavna navigacija" style="display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
-<div class="dd"><a class="lnk" href="index.html" style="padding: 12px 0"><span class="u">Početna</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="ddm"><div><a href="index.html#usluge">Delatnosti</a><a href="index.html#projekti">Odabrani projekti</a><a href="index.html#o-nama">O firmi</a><a href="index.html#kontakt">Kontakt</a></div></div></div>
+<div class="dd"><a class="lnk" href="index.html" style="padding: 12px 0"><span class="u">Početna</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a><div class="ddm"><div><a href="index.html#usluge">Delatnosti</a><a href="index.html#projekti">Odabrani projekti</a><a href="index.html#o-nama">O firmi</a><a href="index.html#kontakt">Kontakt</a></div></div></div>
 <a class="lnk" href="projekti.html" style="padding: 12px 0"><span class="u">Projekti</span></a>
 <a class="lnk" href="o-nama.html" aria-current="page" style="padding: 12px 0; color: #6b0f1a"><span class="u">O nama</span></a>
 <a class="lnk btn" href="kontakt.html" style="padding: 13px 20px; background: #6b0f1a; color: #fefefe; border-radius: 4px; font-weight: 600">Zatražite ponudu</a>
@@ -84,8 +93,8 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 
 <!-- PRIČA -->
 <section style="padding: 104px 0; background: #fefefe">
-<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center">
-<div>
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; align-items: center" class="g12">
+<div style="grid-column: 1 / span 6">
 <h2 style="margin: 0 0 24px; font-size: clamp(30px, 5vw, 44px); line-height: 1.15; font-weight: 800; letter-spacing: -0.045em">Više od <span style="color: #6b0f1a">20 godina</span> na terenu.</h2>
 <p style="margin: 0 0 20px; font-size: 18px; line-height: 1.7; color: #556171; max-width: 560px">Radimo niskogradnju, ograđivanje i asfaltiranje. Tim čine inženjeri, majstori i operativci sa decenijskim iskustvom.</p>
 <p style="margin: 0 0 32px; font-size: 18px; line-height: 1.7; color: #556171; max-width: 560px">Radimo sertifikovanom mehanizacijom i držimo se rokova i budžeta.</p>
@@ -96,7 +105,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 <li style="display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid #d8dde2; font-size: 15px; font-weight: 500"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b0f1a" stroke-width="2" aria-hidden="true" style="flex-shrink: 0"><path d="M5 12l5 5 9-10"></path></svg>Stroge mere zaštite na radu</li>
 </ul>
 </div>
-<div style="min-width: 0">
+<div class="ph" style="grid-column: 8 / span 5; min-width: 0">
 <div style="aspect-ratio: 4/5; overflow: hidden; background: #f3f4f5"><img src="images/hala-konstrukcija.webp" alt="Radnici Trgoimpex W montiraju čeličnu konstrukciju hale" width="1600" height="1200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
 <div style="width: 65px; height: 5px; background: #6b0f1a"></div>
 </div>
@@ -107,7 +116,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 <section style="padding: 96px 0; background: #f3f4f5; border-top: 1px solid #d8dde2; border-bottom: 1px solid #d8dde2">
 <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px">
 <h2 style="margin: 0 0 48px; font-size: clamp(30px, 5vw, 44px); line-height: 1.15; font-weight: 800; letter-spacing: -0.045em; max-width: 640px">Čime se najviše <span style="color: #6b0f1a">bavimo</span></h2>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px">
+<div class="g3" style="row-gap: 40px">
 <div style="border-top: 3px solid #6b0f1a; padding-top: 24px">
 <h3 style="margin: 0 0 12px; font-size: 22px; letter-spacing: -0.03em">Ograđivanje placeva</h3>
 <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #1b2e3c">Glavna delatnost. Ograđujemo parcele žičanom mrežom od pocinkovane žice na betonskim stubovima.</p>
@@ -121,18 +130,18 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 <p style="margin: 0; font-size: 15px; line-height: 1.75; color: #1b2e3c">Izgradnja novih objekata i hala, uključujući montažu čelične konstrukcije.</p>
 </div>
 </div>
-<p style="margin: 40px 0 0; font-size: 16px; line-height: 1.7; color: #556171; max-width: 640px">Radimo i iskope, visokogradnju i inženjering. <a class="lnk hit" href="index.html#usluge" style="color: #6b0f1a; font-weight: 600; border-bottom: 2px solid #6b0f1a; padding-bottom: 2px">Pogledajte sve delatnosti</a></p>
+<p style="margin: 40px 0 0; font-size: 16px; line-height: 1.7; color: #556171; max-width: 640px">Radimo i iskope, visokogradnju i inženjering. <a class="lnk hit" href="index.html" style="color: #6b0f1a; font-weight: 600; border-bottom: 2px solid #6b0f1a; padding-bottom: 2px">Pogledajte sve delatnosti</a></p>
 </div>
 </section>
 
 <!-- BROJKE -->
 <section style="padding: 96px 0; background: #fefefe">
 <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px">
-<dl style="display: flex; flex-wrap: wrap; margin: 0; border-top: 1px solid #d8dde2; border-bottom: 1px solid #d8dde2">
-<div style="flex: 1 1 220px; padding: 40px 32px 40px 0"><dd style="margin: 0; font-size: clamp(40px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: #6b0f1a">20+</dd><dt style="margin-top: 10px; font-size: 15px; color: #556171">Godina iskustva</dt></div>
-<div style="flex: 1 1 220px; padding: 40px 32px; border-left: 1px solid #d8dde2"><dd style="margin: 0; font-size: clamp(40px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: #6b0f1a">180+</dd><dt style="margin-top: 10px; font-size: 15px; color: #556171">Završenih projekata</dt></div>
-<div style="flex: 1 1 220px; padding: 40px 32px; border-left: 1px solid #d8dde2"><dd style="margin: 0; font-size: clamp(40px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: #6b0f1a">15+</dd><dt style="margin-top: 10px; font-size: 15px; color: #556171">Stručnih radnika</dt></div>
-<div style="flex: 1 1 220px; padding: 40px 32px; border-left: 1px solid #d8dde2"><dd style="margin: 0; font-size: clamp(40px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: #6b0f1a">Srbija</dd><dt style="margin-top: 10px; font-size: 15px; color: #556171">Radimo širom cele zemlje</dt></div>
+<dl class="g4" style="margin: 0; border-top: 1px solid #d8dde2; border-bottom: 1px solid #d8dde2">
+<div class="vr" style="padding: 40px 0"><dd style="margin: 0; font-size: clamp(40px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: #6b0f1a">20+</dd><dt style="margin-top: 10px; font-size: 15px; color: #556171">Godina iskustva</dt></div>
+<div class="vr" style="padding: 40px 0"><dd style="margin: 0; font-size: clamp(40px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: #6b0f1a">180+</dd><dt style="margin-top: 10px; font-size: 15px; color: #556171">Završenih projekata</dt></div>
+<div class="vr" style="padding: 40px 0"><dd style="margin: 0; font-size: clamp(40px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: #6b0f1a">15+</dd><dt style="margin-top: 10px; font-size: 15px; color: #556171">Stručnih radnika</dt></div>
+<div class="vr" style="padding: 40px 0"><dd style="margin: 0; font-size: clamp(40px, 6vw, 56px); font-weight: 800; line-height: 1.1; letter-spacing: -0.05em; font-variant-numeric: tabular-nums; color: #6b0f1a">Srbija</dd><dt style="margin-top: 10px; font-size: 15px; color: #556171">Radimo širom cele zemlje</dt></div>
 </dl>
 <div style="display: flex; align-items: center; gap: 24px 40px; flex-wrap: wrap; margin-top: 56px">
 <a class="lnk btn" href="kontakt.html" style="display: inline-flex; align-items: center; gap: 16px; min-height: 54px; padding: 15px 24px; box-sizing: border-box; border-radius: 4px; background: #6b0f1a; color: #fefefe; font-size: 15px; font-weight: 600">Zatražite ponudu <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
@@ -150,7 +159,7 @@ a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3p
 <div><div style="font-size: 36px; font-weight: 800; letter-spacing: -0.04em">Planirate radove?</div></div>
 <a class="lnk btn" href="kontakt.html" style="display: inline-flex; align-items: center; gap: 16px; min-height: 54px; padding: 15px 24px; box-sizing: border-box; border: 1px solid rgba(254,254,254,0.35); border-radius: 4px; background: #6b0f1a; color: #fefefe; font-size: 15px; font-weight: 600">Zatražite ponudu <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 48px; padding-bottom: 56px">
+<div class="g4" style="row-gap: 48px; padding-bottom: 56px">
 <div>
 <div style="display: inline-flex; align-items: center; gap: 11px; margin-bottom: 20px">
 <svg viewBox="0 0 198 112" width="64" height="41" fill="none" aria-hidden="true"><path d="M17 11H137L116 34H74V88L47 106V34H0L17 11Z" fill="#FEFEFE"></path><path d="M80 41H108L126 69L147 38L169 70L187 41H216L176 112H157L146 92L132 112H113L80 54Z" transform="translate(-18 -2)" fill="#FEFEFE"></path></svg>

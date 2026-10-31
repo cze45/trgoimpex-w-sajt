@@ -11,7 +11,7 @@ body{margin:0}
 a{color:inherit;text-decoration:none;touch-action:manipulation}
 h1,h2,h3{text-wrap:balance}
 p,li{text-wrap:pretty}
-[style*="max-width: 1240px"]{padding-left:max(24px,env(safe-area-inset-left))!important;padding-right:max(24px,env(safe-area-inset-right))!important}
+[style*="max-width: 1240px"],[style*="max-width: 1288px"]{padding-left:max(24px,env(safe-area-inset-left))!important;padding-right:max(24px,env(safe-area-inset-right))!important}
 .nav a,.fl{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}
 .hit,.dk,.tlink{position:relative}
 .hit::after,.dk::after,.tlink::after{content:"";position:absolute;inset:-12px -6px}
@@ -51,6 +51,15 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 .field{height:50px;box-sizing:border-box;border:1px solid #556171;border-radius:4px;padding:0 14px;font:inherit;font-size:15px;background:#fff;color:#1b2e3c;width:100%}
 .field::placeholder{color:#556171}
 @media (prefers-reduced-motion:reduce){.lnk{transition:none}}
+
+/* grid: 12 kolona, razmak 24px, kontejner 1240px, kolona 81,33px */
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:24px}
+.vr{position:relative}
+.vr+.vr::before{content:"";position:absolute;left:-12px;top:0;bottom:0;width:1px;background:var(--vr,#d8dde2)}
+@media (max-width:900px){.g12{grid-template-columns:minmax(0,1fr);row-gap:40px}.g12>*{grid-column:1/-1!important;grid-row:auto!important}.g12 .ph{order:-1}.g3{grid-template-columns:repeat(2,minmax(0,1fr))}.g4{grid-template-columns:repeat(2,minmax(0,1fr))}.g4>.vr:nth-child(odd)::before{display:none}}
+@media (max-width:600px){.g3,.g4{grid-template-columns:minmax(0,1fr)}.vr::before{display:none}}
 </style>
 </head>
 <body>
@@ -62,13 +71,13 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 
 <!-- HEADER -->
 <header style="position: sticky; top: 0; z-index: 50; background: #fefefe; border-bottom: 1px solid #d8dde2">
-<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; min-height: 84px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<div style="max-width: 1288px; margin: 0 auto; padding: 0 24px; min-height: 84px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
 <a href="index.html" aria-label="Trgoimpex W – početna strana" style="display: inline-flex; align-items: center; gap: 11px">
 <svg viewBox="0 0 198 112" width="64" height="41" fill="none" aria-hidden="true"><path d="M17 11H137L116 34H74V88L47 106V34H0L17 11Z" fill="#1B2E3C"></path><path d="M80 41H108L126 69L147 38L169 70L187 41H216L176 112H157L146 92L132 112H113L80 54Z" transform="translate(-18 -2)" fill="#6B0F1A"></path></svg>
 <span translate="no" style="font-weight: 800; font-size: 19px; line-height: 1; letter-spacing: -0.065em; white-space: nowrap">TRGOIMPEX&nbsp;W</span>
 </a>
 <nav class="nav" aria-label="Glavna navigacija" style="display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
-<div class="dd"><a class="lnk" href="index.html" style="padding: 12px 0"><span class="u">Početna</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="ddm"><div><a href="index.html#usluge">Delatnosti</a><a href="index.html#projekti">Odabrani projekti</a><a href="index.html#o-nama">O firmi</a><a href="index.html#kontakt">Kontakt</a></div></div></div>
+<div class="dd"><a class="lnk" href="index.html" style="padding: 12px 0"><span class="u">Početna</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></a><div class="ddm"><div><a href="index.html#usluge">Delatnosti</a><a href="index.html#projekti">Odabrani projekti</a><a href="index.html#o-nama">O firmi</a><a href="index.html#kontakt">Kontakt</a></div></div></div>
 <a class="lnk" href="projekti.html" style="padding: 12px 0"><span class="u">Projekti</span></a>
 <a class="lnk" href="o-nama.html" style="padding: 12px 0"><span class="u">O nama</span></a>
 <a class="lnk btn" href="kontakt.html" aria-current="page" style="padding: 13px 20px; background: #6b0f1a; color: #fefefe; border-radius: 4px; font-weight: 600">Zatražite ponudu</a>
@@ -88,8 +97,8 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 
 <!-- KONTAKT -->
 <section class="dark" style="position: relative; overflow: hidden; padding: 96px 0 112px; background: #2b4162; color: #fefefe">
-<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; align-items: start">
-<div style="color: #fefefe; padding: 8px 0">
+<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 0 24px; align-items: start" class="g12">
+<div style="grid-column: 1 / span 6; color: #fefefe; padding: 8px 0">
 <h2 style="margin: 0; padding-bottom: 18px; border-bottom: 1px solid rgba(254,254,254,0.22); font-size: 22px; font-weight: 800; letter-spacing: -0.03em">Kontakt podaci</h2>
 <div style="display: flex; gap: 18px; align-items: center; padding: 26px 0; border-bottom: 1px solid rgba(254,254,254,0.22)">
 <span style="flex-shrink: 0; width: 44px; height: 44px; background: #fefefe; border-radius: 4px; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b0f1a" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"></path></svg></span>
@@ -116,7 +125,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 </div></div>
 </div>
 </div>
-<form class="cw" action="mailto:trgoimpexw@gmail.com?subject=Upit%20sa%20sajta" method="post" enctype="text/plain" style="background: #f3f4f5; color: #1b2e3c; border: 1px solid #d8dde2; padding: 32px 34px; display: grid; gap: 20px; align-content: start">
+<form class="cw" action="mailto:trgoimpexw@gmail.com?subject=Upit%20sa%20sajta" method="post" enctype="text/plain" style="grid-column: 7 / span 6; background: #f3f4f5; color: #1b2e3c; border: 1px solid #d8dde2; padding: 32px 34px; display: grid; gap: 20px; align-content: start">
 <h2 style="margin: 0; padding-bottom: 18px; border-bottom: 1px solid #d8dde2; font-size: 22px; font-weight: 800; letter-spacing: -0.03em">Pošaljite upit</h2>
 <div style="display: grid; gap: 8px"><label for="f-ime" style="font-size: 15px; font-weight: 700">Ime i prezime</label><input id="f-ime" name="name" type="text" autocomplete="name" required="" placeholder="Marko Marković…" class="field"></div>
 <div style="display: grid; gap: 8px"><label for="f-tel" style="font-size: 15px; font-weight: 700">Telefon</label><input id="f-tel" name="phone" type="tel" inputmode="tel" autocomplete="tel" required="" placeholder="063 123 4567…" class="field"></div>
@@ -137,7 +146,7 @@ a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,te
 <!-- FOOTER -->
 <footer class="dark" style="background: #1b2e3c; color: #fefefe; padding: 56px 0 28px">
 <div style="max-width: 1240px; margin: 0 auto; padding: 0 24px">
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 48px; padding-bottom: 56px">
+<div class="g4" style="row-gap: 48px; padding-bottom: 56px">
 <div>
 <div style="display: inline-flex; align-items: center; gap: 11px; margin-bottom: 20px">
 <svg viewBox="0 0 198 112" width="64" height="41" fill="none" aria-hidden="true"><path d="M17 11H137L116 34H74V88L47 106V34H0L17 11Z" fill="#FEFEFE"></path><path d="M80 41H108L126 69L147 38L169 70L187 41H216L176 112H157L146 92L132 112H113L80 54Z" transform="translate(-18 -2)" fill="#FEFEFE"></path></svg>
