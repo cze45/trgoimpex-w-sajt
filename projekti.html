@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projekti – Trgoimpex W</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none;touch-action:manipulation}
+h1,h2,h3{text-wrap:balance}
+p,li{text-wrap:pretty}
+[style*="max-width: 1240px"]{padding-left:max(24px,env(safe-area-inset-left))!important;padding-right:max(24px,env(safe-area-inset-right))!important}
+.nav a,.fl{display:inline-flex;align-items:center;min-height:44px;box-sizing:border-box}
+.hit,.dk,.tlink{position:relative}
+.hit::after,.dk::after,.tlink::after{content:"";position:absolute;inset:-12px -6px}
+@view-transition{navigation:auto}
+header{view-transition-name:site-header}
+::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation-duration:.25s}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none}}
+#sadrzaj{scroll-margin-top:96px}
+.nav .u{position:relative}
+.nav .u::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:2px;background:currentColor;transform:scaleX(0);transform-origin:left center;transition:transform .3s ease}
+.nav a:hover .u::after,.nav a:focus-visible .u::after,.nav a[aria-current="page"] .u::after{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){.nav .u::after{transition:none}}
+
+.dd{position:relative;display:inline-flex}
+.dd>a .chev{margin-left:6px;transition:transform .25s ease}
+.dd:hover>a .chev,.dd:focus-within>a .chev{transform:rotate(180deg)}
+.ddm{position:absolute;top:100%;left:-16px;min-width:220px;padding-top:6px;display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;z-index:60;transition:grid-template-rows .3s ease .15s,opacity .2s ease .15s,visibility 0s linear .45s}
+.dd:hover .ddm,.dd:focus-within .ddm{grid-template-rows:1fr;opacity:1;visibility:visible;transition:grid-template-rows .3s ease,opacity .2s ease,visibility 0s}
+.ddm>div{overflow:hidden;min-height:0;background:#fefefe;border:1px solid #d8dde2;border-radius:4px;box-shadow:0 12px 28px rgba(27,46,60,.14)}
+.nav .ddm a{display:flex;min-height:44px;padding:0 16px;border:0!important;color:#1b2e3c!important;font-weight:500;white-space:nowrap}
+.nav .ddm a:hover{background:#f3f4f5;color:#6b0f1a!important}
+.ddm a:focus-visible{outline-offset:-3px;outline-color:#6b0f1a!important}
+@media (hover:none){.ddm{display:none}}
+@media (prefers-reduced-motion:reduce){.ddm,.dd:hover .ddm,.dd:focus-within .ddm,.dd>a .chev{transition:none}}
+
+.lnk{transition:color .15s,border-color .15s,background-color .15s}
+.nav a:hover{color:#6b0f1a;border-bottom-color:#6b0f1a}
+.btn:hover{background:#500b14}
+.card img{transition:transform .4s}
+.card:hover img{transform:scale(1.03)}
+.fl:hover{color:#fff}
+a:focus-visible,button:focus-visible{outline:3px solid #6b0f1a;outline-offset:3px}
+.dark a:focus-visible,.dark button:focus-visible{outline-color:#fff}
+.skip{position:absolute;left:16px;top:-80px;background:#6b0f1a;color:#fff;padding:12px 18px;border-radius:4px;font-weight:600;font-size:14px;z-index:5}
+.skip:focus{top:12px}
+@media (prefers-reduced-motion:reduce){.lnk,.card img{transition:none}.card:hover img{transform:none}}
+</style>
+</head>
+<body>
+<div style="font-family: 'Montserrat', system-ui, sans-serif; color: #1b2e3c; background: #fefefe; position: relative">
+
+<a href="#sadrzaj" class="skip">Preskoči na sadržaj</a>
+
+<!-- TRAKA SA KONTAKTOM -->
+
+
+<!-- HEADER -->
+<header style="position: sticky; top: 0; z-index: 50; background: #fefefe; border-bottom: 1px solid #d8dde2">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px; min-height: 84px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap">
+<a href="index.html" aria-label="Trgoimpex W – početna strana" style="display: inline-flex; align-items: center; gap: 11px">
+<svg viewBox="0 0 198 112" width="64" height="41" fill="none" aria-hidden="true"><path d="M17 11H137L116 34H74V88L47 106V34H0L17 11Z" fill="#1B2E3C"></path><path d="M80 41H108L126 69L147 38L169 70L187 41H216L176 112H157L146 92L132 112H113L80 54Z" transform="translate(-18 -2)" fill="#6B0F1A"></path></svg>
+<span translate="no" style="font-weight: 800; font-size: 19px; line-height: 1; letter-spacing: -0.065em; white-space: nowrap">TRGOIMPEX&nbsp;W</span>
+</a>
+<nav class="nav" aria-label="Glavna navigacija" style="display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 500; flex-wrap: wrap">
+<div class="dd"><a class="lnk" href="index.html" style="padding: 12px 0"><span class="u">Početna</span><svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></a><div class="ddm"><div><a href="index.html#usluge">Delatnosti</a><a href="index.html#projekti">Odabrani projekti</a><a href="index.html#o-nama">O firmi</a><a href="index.html#kontakt">Kontakt</a></div></div></div>
+<a class="lnk" href="projekti.html" aria-current="page" style="padding: 12px 0; color: #6b0f1a"><span class="u">Projekti</span></a>
+<a class="lnk" href="o-nama.html" style="padding: 12px 0"><span class="u">O nama</span></a>
+<a class="lnk btn" href="kontakt.html" style="padding: 13px 20px; background: #6b0f1a; color: #fefefe; border-radius: 4px; font-weight: 600">Zatražite ponudu</a>
+</nav>
+</div>
+</header>
+
+<main id="sadrzaj">
+
+<!-- NASLOV STRANICE -->
+<section style="padding: 88px 0 56px; background: #f3f4f5; border-bottom: 1px solid #d8dde2">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px">
+<h1 style="margin: 0 0 16px; font-size: clamp(40px, 7vw, 60px); line-height: 1.1; font-weight: 800; letter-spacing: -0.05em">Projekti</h1>
+<p style="margin: 0; max-width: 560px; font-size: 18px; line-height: 1.7; color: #556171">Pogledajte fotografije radova i pročitajte opis svakog projekta.</p>
+</div>
+</section>
+
+<!-- LISTA PROJEKATA -->
+<section style="padding: 24px 0 96px; background: #fefefe">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px">
+
+<article class="card" style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
+<div style="flex: 1 1 560px; min-width: 0; aspect-ratio: 16/9; overflow: hidden; background: #f3f4f5"><img src="images/most-asfalt.webp" alt="Asfaltiranje kolovoza na mostu sa zaštitnim ogradama" width="1600" height="900" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block"></div>
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #6b0f1a">Infrastruktura</p>
+<h2 style="margin: 0 0 16px; font-size: 30px; line-height: 1.2; font-weight: 800; letter-spacing: -0.035em">Asfaltiranje kolovoza na mostu</h2>
+<p style="margin: 0 0 14px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Fotografija prikazuje asfaltiranje kolovoza na mostu. Nova asfaltna površina prati krivinu mosta, između ivičnjaka i pešačkih staza.</p>
+<p style="margin: 0 0 24px; font-size: 16px; line-height: 1.75; color: #1b2e3c">U pozadini se vide mašina za asfaltiranje i radnici tokom izvođenja radova. Sa obe strane kolovoza nalaze se metalne zaštitne ograde, a uz pešačku stazu stubovi rasvete.</p>
+<a class="lnk hit" href="kontakt.html" style="font-size: 14px; font-weight: 600; color: #6b0f1a; border-bottom: 2px solid #6b0f1a; padding-bottom: 2px">Pošaljite upit za sličan rad</a>
+</div>
+</article>
+
+<article class="card" style="display: flex; flex-wrap: wrap-reverse; gap: 32px 64px; align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #6b0f1a">Visokogradnja</p>
+<h2 style="margin: 0 0 16px; font-size: 30px; line-height: 1.2; font-weight: 800; letter-spacing: -0.035em">Čelična konstrukcija hale</h2>
+<p style="margin: 0 0 14px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Na fotografiji je čelična konstrukcija hale u fazi montaže. Niz stubova i krovnih nosača formira oblik objekta, dok dijagonalna ukrućenja povezuju elemente konstrukcije.</p>
+<p style="margin: 0 0 24px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Radnici koriste podiznu platformu za pristup elementima na visini. Kadar prikazuje konstrukciju pre zatvaranja fasade i krova, sa vidljivim nosačima i spojevima.</p>
+<a class="lnk hit" href="kontakt.html" style="font-size: 14px; font-weight: 600; color: #6b0f1a; border-bottom: 2px solid #6b0f1a; padding-bottom: 2px">Pošaljite upit za sličan rad</a>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; aspect-ratio: 4/3; overflow: hidden; background: #f3f4f5"><img src="images/hala-konstrukcija.webp" alt="Radnici montiraju čeličnu konstrukciju hale" width="1600" height="1200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+</article>
+
+<article class="card" style="display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center; padding: 64px 0; border-bottom: 1px solid #d8dde2">
+<div style="flex: 1 1 560px; min-width: 0; aspect-ratio: 4/3; overflow: hidden; background: #f3f4f5"><img src="images/plato-asfalt.webp" alt="Asfaltirani industrijski plato između hala sa obeleženim parking mestima" width="1600" height="1200" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block"></div>
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #6b0f1a">Niskogradnja</p>
+<h2 style="margin: 0 0 16px; font-size: 30px; line-height: 1.2; font-weight: 800; letter-spacing: -0.035em">Asfaltiranje industrijskog platoa</h2>
+<p style="margin: 0 0 14px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Fotografija prikazuje asfaltirani plato između dva reda industrijskih hala. Središnji prolaz omogućava prilaz objektima, a uz njega su obeležena parking mesta.</p>
+<p style="margin: 0 0 24px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Bele linije razdvajaju saobraćajnu traku i prostor za parkiranje. Asfaltna površina proteže se duž objekata i povezuje njihove ulaze sa unutrašnjom saobraćajnicom.</p>
+<a class="lnk hit" href="kontakt.html" style="font-size: 14px; font-weight: 600; color: #6b0f1a; border-bottom: 2px solid #6b0f1a; padding-bottom: 2px">Pošaljite upit za sličan rad</a>
+</div>
+</article>
+
+<article class="card" style="display: flex; flex-wrap: wrap-reverse; gap: 32px 64px; align-items: center; padding: 64px 0 0">
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0 0 12px; font-size: 13px; font-weight: 600; color: #6b0f1a">Ograđivanje</p>
+<h2 style="margin: 0 0 16px; font-size: 30px; line-height: 1.2; font-weight: 800; letter-spacing: -0.035em">Žičana ograda</h2>
+<p style="margin: 0 0 14px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Ogradu čine žičana mreža i betonski stubovi. Na fotografiji se vide kosi oslonci koji dodatno podupiru stub i zategnuta mreža između susednih stubova.</p>
+<p style="margin: 0 0 24px; font-size: 16px; line-height: 1.75; color: #1b2e3c">Iznad mreže nalaze se redovi bodljikave žice. Ograda prati ivicu poljoprivredne površine i razdvaja je od pristupnog pojasa sa spoljne strane.</p>
+<a class="lnk hit" href="kontakt.html" style="font-size: 14px; font-weight: 600; color: #6b0f1a; border-bottom: 2px solid #6b0f1a; padding-bottom: 2px">Pošaljite upit za sličan rad</a>
+</div>
+<div style="flex: 1 1 560px; min-width: 0; max-width: 560px; aspect-ratio: 4/5; overflow: hidden; background: #f3f4f5"><img src="images/zicana-ograda.webp" alt="Žičana ograda na betonskim stubovima sa kosnicima i bodljikavom žicom" width="1200" height="1600" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block"></div>
+</article>
+
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="dark" style="background: #1b2e3c; color: #fefefe; padding: 0 0 28px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 24px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 48px 0; border-bottom: 1px solid rgba(254,254,254,0.2); margin-bottom: 56px">
+<div><div style="font-size: 36px; font-weight: 800; letter-spacing: -0.04em">Planirate radove?</div></div>
+<a class="lnk btn" href="kontakt.html" style="display: inline-flex; align-items: center; gap: 16px; min-height: 54px; padding: 15px 24px; box-sizing: border-box; border: 1px solid rgba(254,254,254,0.35); border-radius: 4px; background: #6b0f1a; color: #fefefe; font-size: 15px; font-weight: 600">Zatražite ponudu <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 48px; padding-bottom: 56px">
+<div>
+<div style="display: inline-flex; align-items: center; gap: 11px; margin-bottom: 20px">
+<svg viewBox="0 0 198 112" width="64" height="41" fill="none" aria-hidden="true"><path d="M17 11H137L116 34H74V88L47 106V34H0L17 11Z" fill="#FEFEFE"></path><path d="M80 41H108L126 69L147 38L169 70L187 41H216L176 112H157L146 92L132 112H113L80 54Z" transform="translate(-18 -2)" fill="#FEFEFE"></path></svg>
+<span translate="no" style="font-weight: 800; font-size: 19px; line-height: 1; letter-spacing: -0.065em; white-space: nowrap">TRGOIMPEX&nbsp;W</span>
+</div>
+<p style="margin: 0 0 12px; font-size: 14px; line-height: 1.7; color: rgba(254,254,254,0.88)">Porodična građevinska firma iz Novog Sada. Više od 20 godina na terenu.</p>
+<p style="margin: 0; font-size: 14px; line-height: 1.7; color: rgba(254,254,254,0.88)">Odgovaramo na upite u roku od 24&nbsp;sata radnim danom.</p>
+</div>
+<div>
+<h3 style="margin: 0 0 14px; font-size: 14px; font-weight: 600">Stranice</h3>
+<div style="display: grid; gap: 4px; font-size: 14px; color: rgba(254,254,254,0.88)"><a class="lnk fl" href="index.html" style="padding: 8px 0">Početna</a><a class="lnk fl" href="projekti.html" style="padding: 8px 0">Projekti</a><a class="lnk fl" href="o-nama.html" style="padding: 8px 0">O nama</a><a class="lnk fl" href="kontakt.html" style="padding: 8px 0">Kontakt</a></div>
+</div>
+<div>
+<h3 style="margin: 0 0 14px; font-size: 14px; font-weight: 600">Delatnosti</h3>
+<div style="display: grid; gap: 4px; font-size: 14px; color: rgba(254,254,254,0.88)"><a class="lnk fl" href="index.html#usluge" style="padding: 8px 0">Iskopi i zemljani radovi</a><a class="lnk fl" href="index.html#usluge" style="padding: 8px 0">Niskogradnja</a><a class="lnk fl" href="index.html#usluge" style="padding: 8px 0">Asfaltiranje</a><a class="lnk fl" href="index.html#usluge" style="padding: 8px 0">Ograđivanje</a><a class="lnk fl" href="index.html#usluge" style="padding: 8px 0">Visokogradnja</a><a class="lnk fl" href="index.html#usluge" style="padding: 8px 0">Inženjering</a></div>
+</div>
+<div>
+<h3 style="margin: 0 0 14px; font-size: 14px; font-weight: 600">Kontakt</h3>
+<div style="display: grid; gap: 4px; font-size: 14px; color: rgba(254,254,254,0.88)"><span style="padding: 8px 0">Titelska&nbsp;5<br>Novi&nbsp;Sad, Srbija</span><a class="lnk fl" href="tel:+38163504857" style="padding: 8px 0">+381&nbsp;63&nbsp;504&nbsp;857</a><a class="lnk fl" href="mailto:trgoimpexw@gmail.com" style="padding: 8px 0">trgoimpexw@gmail.com</a></div>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; border-top: 1px solid rgba(254,254,254,0.25); font-size: 13px; color: rgba(254,254,254,0.85)">
+<span>© 2026 <span translate="no">Trgoimpex&nbsp;W</span>. Sva prava zadržana.</span>
+<span style="display: flex; gap: 28px"><a class="lnk fl" href="#" style="padding: 6px 0">Politika privatnosti</a><a class="lnk fl" href="#sadrzaj" style="padding: 6px 0">Nazad na vrh</a></span>
+</div>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
